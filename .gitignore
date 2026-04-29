@@ -1,0 +1,13 @@
+# Virtual environment
+.venv/
+__pycache__/
+*.pyc
+
+# Plots output
+plots/
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
