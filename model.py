@@ -25,9 +25,11 @@ def compute_gradients(X, y_pred, y_true):
     n = len(y_true)
     
     # dw: Derivative of loss with respect to weight (slope direction) 
+    # dw uses X because the weight's influence on the error scales with the input size
     dw = (2/n) * np.sum((y_pred - y_true) * X)
     
     # db: Derivative of loss with respect to bias (intercept direction)
+    # db doesn't use X because bias shifts the prediction independently of the input
     db = (2/n) * np.sum(y_pred - y_true)
     
     return dw, db
