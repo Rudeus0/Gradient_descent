@@ -1,5 +1,5 @@
 # Virtual environment
-.venv/
+.mygrad_desc/
 __pycache__/
 *.pyc
 
