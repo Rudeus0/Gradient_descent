@@ -33,3 +33,11 @@ def compute_gradients(X, y_pred, y_true):
     db = (2/n) * np.sum(y_pred - y_true)
     
     return dw, db
+
+def update_params(weight, bias, dw, db, learning_rate):
+    # Adjusts parameters by moving in the opposite direction of the gradient
+    # learning_rate: Controls the size of the step taken toward the minimum loss
+    weight = weight - learning_rate * dw
+    bias = bias - learning_rate * db
+    
+    return weight, bias
