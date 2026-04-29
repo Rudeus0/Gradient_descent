@@ -19,3 +19,15 @@ def compute_loss(y_pred, y_true):
     # Calculates the Mean Squared Error (MSE)
     # Measures the average squared distance between predictions and actual values
     return np.mean((y_pred - y_true) ** 2)
+
+def compute_gradients(X, y_pred, y_true):
+    # n: Number of samples
+    n = len(y_true)
+    
+    # dw: Derivative of loss with respect to weight (slope direction) 
+    dw = (2/n) * np.sum((y_pred - y_true) * X)
+    
+    # db: Derivative of loss with respect to bias (intercept direction)
+    db = (2/n) * np.sum(y_pred - y_true)
+    
+    return dw, db
