@@ -37,7 +37,8 @@ def compute_gradients(X, y_pred, y_true):
 def update_params(weight, bias, dw, db, learning_rate):
     # Adjusts parameters by moving in the opposite direction of the gradient
     # learning_rate: Controls the size of the step taken toward the minimum loss
+    # (Multiplication happens before subtraction)
     weight = weight - learning_rate * dw
-    bias = bias - learning_rate * db
+    bias = bias - (learning_rate * 5000) * db # bias needs larger step
     
     return weight, bias
