@@ -25,4 +25,6 @@ for epoch in range(epochs):
     # 5. Logging: Save loss for performance tracking
     loss_history.append(loss)
     
-        
+    # Logging: Print progress every 100 epochs to monitor convergence
+    if epoch % 100 == 0:
+        print(f"Epoch {epoch} | Loss: {loss:.2f} | Weight: {weight:.4f} | Bias: {bias:.4f}")
