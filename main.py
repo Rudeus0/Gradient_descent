@@ -35,6 +35,10 @@ def train(X, y, learning_rate=0.0001, epochs=1000):
 
 if __name__ == "__main__":
     X, y = generate_data()
-    weight, bias, loss_history = train(X, y)
+    weight, bias, loss_history = train(X, y, learning_rate=0.000003, epochs=5000)
     print(f"\n final Weight: {weight: .4f} (should be ~ 1.5)")
     print(f"Final bias: {bias:.4f} (should be ~50)")
+    
+    from visualize import plot_loss, plot_predictions
+    plot_loss(loss_history)
+    plot_predictions(X, y, weight, bias)
